@@ -1,7 +1,6 @@
 import React, { useEffect, useMemo, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
-const API_URL = "http://localhost:5000/api/projects";
 
 const AdminDashboard = () => {
   const navigate = useNavigate();
@@ -19,7 +18,7 @@ const AdminDashboard = () => {
     try {
       setError("");
 
-      const response = await fetch(`${API_URL}/all`);
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/projects/all`);
       const data = await response.json();
 
       if (!response.ok || !data.success) {

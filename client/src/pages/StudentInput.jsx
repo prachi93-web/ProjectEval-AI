@@ -49,8 +49,9 @@ const StudentInput = () => {
       };
 
       // STEP 1: Save the project in MongoDB
+
       const addResponse = await fetch(
-        "http://localhost:5000/api/projects/add",
+        `${import.meta.env.VITE_API_URL}/api/projects/add`,
         {
           method: "POST",
           headers: {
@@ -72,7 +73,7 @@ const StudentInput = () => {
       setStatusMessage("Project submitted! Generating AI evaluation...");
 
       const evaluateResponse = await fetch(
-        `http://localhost:5000/api/projects/evaluate/${projectId}`,
+        `${import.meta.env.VITE_API_URL}/api/projects/evaluate/${projectId}`,
         {
           method: "POST",
           headers: {
