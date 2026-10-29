@@ -44,7 +44,7 @@ const EvaluationResult = () => {
       setError("");
 
       const response = await fetch(
-        `${import.meta.env.VITE_API_URL}/api/projects/generate-evaluation/${id}`,
+        `${import.meta.env.VITE_API_URL}/api/projects/evaluate/${id}`,
         {
           method: "POST",
           headers: {
